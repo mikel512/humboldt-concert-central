@@ -12,6 +12,9 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ApiAuthorizationModule } from '../api-authorization/api-authorization.module';
 import { AuthorizeGuard } from '../api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from '../api-authorization/authorize.interceptor';
+import { SplashComponent } from './home/splash/splash.component';
+import { CitiesMenuComponent } from './home/cities-menu/cities-menu.component';
+import { CityComponent } from './home/cities-menu/city/city.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { AuthorizeInterceptor } from '../api-authorization/authorize.interceptor
     NavMenuComponent,
     HomeComponent,
     CounterComponent,
-    FetchDataComponent
+    FetchDataComponent,
+    SplashComponent,
+    CitiesMenuComponent,
+    CityComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

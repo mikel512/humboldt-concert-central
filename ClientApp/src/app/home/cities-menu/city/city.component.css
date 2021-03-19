@@ -1,0 +1,19 @@
+.city-container {
+    position: relative;
+    text-align: center;
+    color: white
+}
+.city-img {
+    width: 30em;
+    height: 13em;
+    filter: brightness(60%);
+}
+
+.city-title { 
+    position: absolute;
+    color: ivory;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
