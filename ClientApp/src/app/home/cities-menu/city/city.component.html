@@ -1,7 +1,9 @@
 <div class="city-container ">
-    <a href="#">
-        <img [src]="cityObj.CityImg" class="city-img">
-        <h1 class="city-title">{{cityObj.CityName}}</h1>
+    <a routerLink="/venues/{{cityObj.cityName}}">
+        <img [src]="cityObj.image" class="city-img">
+        <h1 class="city-title">{{cityObj.cityName}}</h1>
     </a>
     
 </div>
+<!-- <a class="nav-link text-light" [routerLink]="['/venues']"
+              >Venues</a -->

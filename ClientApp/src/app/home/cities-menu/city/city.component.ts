@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ICity } from '../../../../interface/icity';
+import { City } from '../../../../interface/city';
 
 @Component({
   selector: 'app-city',
@@ -7,7 +7,7 @@ import { ICity } from '../../../../interface/icity';
   styleUrls: ['./city.component.css']
 })
 export class CityComponent implements OnInit {
-  @Input() cityObj: ICity;
+  @Input() cityObj: City;
 
   constructor() { }
 

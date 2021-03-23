@@ -15,6 +15,7 @@ import { AuthorizeInterceptor } from '../api-authorization/authorize.interceptor
 import { SplashComponent } from './home/splash/splash.component';
 import { CitiesMenuComponent } from './home/cities-menu/cities-menu.component';
 import { CityComponent } from './home/cities-menu/city/city.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CityComponent } from './home/cities-menu/city/city.component';
     FetchDataComponent,
     SplashComponent,
     CitiesMenuComponent,
-    CityComponent
+    CityComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -33,9 +35,13 @@ import { CityComponent } from './home/cities-menu/city/city.component';
     FormsModule,
     ApiAuthorizationModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: '', 
+        component: HomeComponent, 
+        pathMatch: 'full' 
+      },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'venues/:city', loadChildren: () => import('./venues-page/venues-page.module').then(m => m.VenuesPageModule) },
     ])
   ],
   providers: [

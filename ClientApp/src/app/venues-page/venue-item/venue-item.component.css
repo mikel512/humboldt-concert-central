@@ -1,16 +1,16 @@
-.city-container {
+.venue-container {
     position: relative;
     text-align: center;
     color: white
 }
 
-.city-img {
+.venue-img {
     width: 100%;
     height: 200px;
     filter: brightness(75%);
 }
 
-.city-title { 
+.venue-title { 
     position: absolute;
     color: ivory;
     top: 50%;

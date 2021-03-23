@@ -1,0 +1,36 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-6">
+
+            <div class="form-group">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-secondary">Event</button>
+                    <button type="button" class="btn btn-secondary">Venue</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-6">
+            <div class="form-group">
+                <label for="exampleFormControlSelect1"></label>
+                <select class="form-control" (change)="navigateTo($event.target.value)">
+                    <option>--Select a Different City--</option>
+                    <option value="venues/Arcata">Arcata</option>
+                    <option value="venues/Eureka">Eureka</option>
+                </select>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row pt-4">
+        <ng-container *ngFor="let venue of venues">
+            <div class="col-sm-6 col-md-4 pb-4">
+                <app-venue-item [venue]="venue"></app-venue-item>
+            </div>
+        </ng-container>
+    </div>
+
+</div>
