@@ -1,7 +1,11 @@
-<div class="venue-container">
+<div class="card">
     <a href="#">
-        <img [src]="venue.picture" class="venue-img">
-        <h1 class="venue-title">{{venue.venueName}}</h1>
+        <img [src]="venue.picture" class="card-img-top">
     </a>
+    <div class="card-body text-light">
+        <h5 class="card-title">{{venue.venueName}}</h5>
+        <p class="card-text">{{venue.location}}</p>
+
+    </div>
     
 </div>

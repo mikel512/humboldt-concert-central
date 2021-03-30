@@ -1,0 +1,15 @@
+.event-card {
+    background-color:#262626;
+}
+
+.card-img-top {
+    height: 100%;
+}
+
+.img-col {
+    padding-right: 0;
+}
+
+.card-body-col {
+    padding-left: 0;
+}

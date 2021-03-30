@@ -15,12 +15,12 @@ export class CitiesMenuComponent implements OnInit {
   ngOnInit(): void {
     let obj1: City = {
       cityId: 0,
-      image: "../../../../assets/Banner-2019-10-09_PGE-PSPS-Outage-ArcataPlaza.jpg",
+      image: "../../../../assets/arcata-1.jpg",
       cityName: 'Arcata'
     }
     let obj2: City = {
       cityId: 1,
-      image: "../../../../assets/Old-Town-Night-Ranario-web.jpg",
+      image: "../../../../assets/eureka-1.jpg",
       cityName: 'Eureka'
     }
     this.cities.push(obj1);

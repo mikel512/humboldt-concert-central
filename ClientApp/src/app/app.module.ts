@@ -42,6 +42,7 @@ import { FooterComponent } from './footer/footer.component';
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'venues/:city', loadChildren: () => import('./venues-page/venues-page.module').then(m => m.VenuesPageModule) },
+      { path: ':city', loadChildren: () => import('./event-page/event-page.module').then(m => m.EventPageModule) },
     ])
   ],
   providers: [

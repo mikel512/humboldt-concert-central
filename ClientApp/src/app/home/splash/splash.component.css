@@ -1,11 +1,11 @@
 .splash-lg {
-    background: url("../../../assets/splash-proto5.jpg") no-repeat scroll center top transparent;
+    background: url("../../../assets/splash-proto5-lg.jpg") no-repeat scroll center top transparent;
     /* background-position: fixed; */
     background-size: 100% 100%;
 }
 
 .splash {
-    background: url("../../../assets/splash-proto5.jpg") no-repeat scroll center top transparent;
+    background: url("../../../assets/splash-proto5-lg.jpg") no-repeat scroll center top transparent;
     background-position: fixed;
     background-size: auto 100%;
 }

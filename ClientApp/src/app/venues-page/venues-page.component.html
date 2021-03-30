@@ -6,24 +6,19 @@
 
                 <div class="form-group">
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-primary">Event</button>
-                        <button type="button" class="btn btn-success">Venue</button>
+                        <button type="button" class="btn btn-primary" (click)="eventsNav()">Event</button>
+                        <button type="button" class="btn btn-success active">Venue</button>
                     </div>
                 </div>
 
             </div>
 
-            <div class="col-8">
+            <div class="col-8 pl-4">
                 <div class="form-group">
                     <select class="form-control bg-dark text-light" (change)="navigateTo($event.target.value)">
-                        <ng-container *ngIf="truth">
-                            <option [value]="venues/city">{{city}}</option>
-                            <option value="venues/Eureka">Eureka</option>
-                        </ng-container>
-                        <ng-container *ngIf="!truth">
-                            <option [value]="venues/city">{{city}}</option>
-                            <option value="venues/Arcata">Arcata</option>
-                        </ng-container>
+                            <option [ngValue]="venues/currentCity">{{currentCity}}</option>
+                            <option *ngFor="let place of citiesDropdown" 
+                                [ngValue]="place">{{place}}</option>
                     </select>
                 </div>
             </div>

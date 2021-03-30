@@ -42,4 +42,16 @@ export class EventPageComponent implements OnInit, AfterViewChecked {
   ngAfterViewChecked() {
   }
 
+  navVenues() {
+    let val = 'venues/' + this.currentCity;
+    this.router.navigate([val]);
+  }
+
+  navigateTo(value) {
+    if (value) {
+      this.router.navigateByUrl('/', { skipLocationChange: true }).then(() =>
+        this.router.navigate([value]));
+    }
+  }
+
 }
