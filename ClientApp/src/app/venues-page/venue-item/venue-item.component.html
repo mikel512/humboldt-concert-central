@@ -1,11 +1,11 @@
 <div class="card">
-    <a href="#">
+    <a routerLink="/venue-detail/{{venue.venueId}}">
         <img [src]="venue.picture" class="card-img-top">
-    </a>
-    <div class="card-body text-light">
-        <h5 class="card-title">{{venue.venueName}}</h5>
-        <p class="card-text">{{venue.location}}</p>
+        <div class="card-body text-light">
+            <h5 class="card-title">{{venue.venueName}}</h5>
+            <p class="card-text">{{venue.location}}</p>
 
-    </div>
-    
+        </div>
+    </a>
+
 </div>

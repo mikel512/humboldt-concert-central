@@ -43,6 +43,8 @@ import { FooterComponent } from './footer/footer.component';
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'venues/:city', loadChildren: () => import('./venues-page/venues-page.module').then(m => m.VenuesPageModule) },
       { path: ':city', loadChildren: () => import('./event-page/event-page.module').then(m => m.EventPageModule) },
+      { path: 'events/:eventId', loadChildren: () => import('./event-detail/event-detail.module').then(m => m.EventDetailModule) },
+      { path: 'venue-detail/:venueId', loadChildren: () => import('./venue-detail/venue-detail.module').then(m => m.VenueDetailModule) },
     ])
   ],
   providers: [

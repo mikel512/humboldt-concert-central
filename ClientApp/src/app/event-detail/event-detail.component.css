@@ -1,0 +1,66 @@
+.event-page-card {
+    color:rgb(209, 205, 199);
+    height: 100%;
+    width: 100%;
+}
+
+.content-bg {
+    background-color: rgb(24, 26, 27);
+}
+
+.spacer {
+    height: 50px;
+}
+
+.img-div {
+    background: url("../../assets/sample-flyer.jpg") no-repeat scroll center top transparent;
+    /* background-size: 100% 100%; */
+    height: 300px;
+    width: 100%;
+}
+
+.card-img-top {
+    position:absolute;
+    overflow: hidden;
+    /* height: 300px; */
+    display: flex;
+
+    object-fit:cover;
+}
+
+.icon-social-circle {
+    border: 2px solid transparent;
+    border-color: rgb(57, 62, 64);
+    border-radius: 44px;
+    padding: 7px 9px 8px;
+    height: 44px;
+    vertical-align: middle;
+}
+
+.align {
+    padding-top: 8px;
+}
+
+.mid-row {
+    height: 56px;
+    width: 100%;
+    border-style: solid;
+    /* box-sizing: border-box; */
+    border-width: 1px 0 1px 0;
+}
+
+.detail-font {
+    font-size: 1rem;
+}
+
+.dim-text {
+    color: #808080;
+}
+
+.location-text {
+    padding-left: 2rem;
+}
+
+.date-text {
+    padding-left: 5rem;
+}
