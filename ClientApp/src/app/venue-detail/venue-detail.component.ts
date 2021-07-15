@@ -23,6 +23,10 @@ export class VenueDetailComponent implements OnInit {
     http.get<Venue>(baseUrl + 'Venue/' + this.venueId).subscribe(result => {
       this.venue = result;
       this.venue.venueName = 'Arcata Theater Lounge';
+      this.venue.description = 'Since reopening as a mixed-use venue, the Arcata Theatre Lounge has become the focal point for entertainment in the small community of Arcata. Since 2010 the bar has a full liquor license. Current occupancy guidelines allow up to 618 attendees depending on the configuration. Alongside movie showings, the venue has seen diverse music acts including Riff Raff, Odesza, Troyboi, and GRiZ';
+      this.venue.address = '1036 G St, Arcata, CA 95521';
+      this.venue.ticketsLink = 'https://www.arcatatheatre.com/';
+      this.venue.menuLink = 'https://www.arcatatheatre.com/couxp-menu'
       console.log(this.venue);
     }, error => console.error(error))
   }

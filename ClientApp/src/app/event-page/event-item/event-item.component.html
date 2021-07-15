@@ -1,3 +1,4 @@
+<!-- 
 <div class="card mb-3">
     <a routerLink="/events/{{event.eventConcertId}}" class="event-card">
         <div #rowDiv class="">
@@ -13,4 +14,25 @@
             </div>
         </div>
     </a>
+</div> 
+-->
+
+<div class="event-box tile-view">
+    <a routerLink="/events/{{event.eventConcertId}}" class="stretched-link">
+    </a>
+    <div class="event-image-container">
+        <a routerLink="/events/{{event.eventConcertId}}">
+            <div class="image" style="background-image: url({{event.flyer}});"></div>
+        </a>
+    </div>
+    <div class="caption">
+        {{event.eventDate}}
+        <br>
+        <div class="event-box-headline">
+            <a routerLink="/events/{{event.eventConcertId}}">{{event.eventName}}</a>
+        </div>
+        <div class="venue-link">
+            {{event.venue.venueName}}
+        </div>
+    </div>
 </div>

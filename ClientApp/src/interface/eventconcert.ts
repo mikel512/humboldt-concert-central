@@ -9,4 +9,5 @@ export interface EventConcert {
     userNotes: string;
     venue: Venue;
     tickets: string;
+    eventTime: string;
 }

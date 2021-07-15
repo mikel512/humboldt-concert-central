@@ -17,10 +17,25 @@
     <div class="format"></div>
 </div>
 
+<br>
+
 <div class="container-md">
 
     <div class="row my-3">
         <div class="col-12"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <ul class="nav nav-tabs nav-justified no-stack d-flex d-lg-none my-3">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#events" data-toggle="tab">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#info" data-toggle="tab">Info</a>
+                </li>
+            </ul>
+        </div>
     </div>
 
     <div class="row mb-5 text-light">
@@ -28,6 +43,38 @@
             <h2>Upcoming events at {{venue.venueName}}</h2>
             <div id="list">
 
+            </div>
+        </div>
+        <div id="info" class="col-lg-4 tab-pane d-lg-block">
+            <h3 style="overflow: hidden; text-overflow: ellipsis;">{{venue.venueName}} General Info</h3>
+            <p>{{venue.description}}</p>
+
+            <div class="row" style="margin-top: 15px;">
+               <div class="col-md-4">
+                   <h5 class="trim-top trim-bottom" style="line-height: 20px;">Address</h5>
+               </div> 
+               <div class="col-md-8">
+                   <address class="mb-0">
+                       {{venue.address}}
+                   </address>
+               </div>
+            </div>
+
+            <div class="row" style="margin-top: 15px;">
+               <div class="col-md-4">
+                   <h5 class="trim-top trim-bottom" style="line-height: 20px;">Additional Links</h5>
+               </div> 
+               <div class="col-md-8">
+                   <ul class="list-unstyled">
+                       <li>
+                           <a href="{{venue.ticketsLink}}">{{venue.venueName}} Website</a>
+                       </li>
+                       <li>
+                           <a href="{{venue.menuLink}}">{{venue.venueName}} Food & Drinks Menu</a>
+                       </li>
+                   </ul>
+
+               </div> 
             </div>
         </div>
     </div>
