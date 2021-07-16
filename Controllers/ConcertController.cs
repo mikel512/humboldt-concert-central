@@ -42,6 +42,12 @@ namespace fortress.core.Controllers
             return concertRepository.GetConcertsByCity(city);
         }
 
+/*        [HttpGet("venue/{venue}")]
+        public Task<IEnumerable<EventConcert>> Get(string venue)
+        {
+            return concertRepository.GetConcertsByVenue(string venue);
+        }
+*/
         // POST /<ConcertController>
         [HttpPost]
         public void Post(EventConcert concert)

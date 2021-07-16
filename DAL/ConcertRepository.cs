@@ -71,6 +71,21 @@ namespace fortress.core.DAL
             return concert;
         }
 
+        public async Task<IEnumerable<EventConcert>> GetConcertsByVenue(string venueName)
+        {
+            using (var cnn = new SqlConnection(connectionString))
+            {
+                cnn.Open();
+                var parameters = new { venue = venueName };
+
+                return await cnn.QueryAsync<EventConcert, Venue, EventConcert>("GetAllConcertsByVenue", (concert, venue) =>
+                {
+                    concert.Venue = venue;
+                    return concert;
+                }, splitOn: "VenueId", param: parameters, commandType: CommandType.StoredProcedure);
+            }
+        }
+
         public void InsertConcert(EventConcert concert)
         {
             // 0 : parent row Id(event), 1: child row id (concert)

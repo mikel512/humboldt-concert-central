@@ -26,3 +26,21 @@
     position: relative;
     bottom: -0.5rem;
 }
+
+.nav-tabs .nav-link.active {
+    background-color: rgb(28, 30, 31);
+    border-color: rgb(64, 70, 72) rgb(64, 70, 72) rgb(61, 66, 68);
+    color: rgb(208, 201, 191);
+}
+
+.nav-justified.nav-tabs.no-stack > li > a {
+    border-bottom-color: rgb(67, 71, 75) !important;
+}
+
+.tab-content > .tab-pane {
+    display: none;
+}
+
+.tab-content > .active {
+    display: block;
+}

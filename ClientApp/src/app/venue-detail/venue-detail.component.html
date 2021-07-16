@@ -29,23 +29,26 @@
         <div class="col-12">
             <ul class="nav nav-tabs nav-justified no-stack d-flex d-lg-none my-3">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#events" data-toggle="tab">Events</a>
+                    <a #eventTab class="nav-link active" (click)="onEventTabClick()"
+                        data-toggle="tab">Events</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#info" data-toggle="tab">Info</a>
+                    <a #infoTab class="nav-link" (click)="onInfoTabClick()"
+                        data-toggle="tab">Info</a>
                 </li>
             </ul>
         </div>
     </div>
 
-    <div class="row mb-5 text-light">
-        <div id="events" class="col-lg-8 d-lg-block">
+    <div class="row tab-content mb-5 text-light">
+        <div #events class="col-lg-8 tab-pane d-lg-block active">
             <h2>Upcoming events at {{venue.venueName}}</h2>
             <div id="list">
 
             </div>
         </div>
-        <div id="info" class="col-lg-4 tab-pane d-lg-block">
+
+        <div #info class="col-lg-4 tab-pane d-lg-block">
             <h3 style="overflow: hidden; text-overflow: ellipsis;">{{venue.venueName}} General Info</h3>
             <p>{{venue.description}}</p>
 

@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
 import { Venue } from '../../interface/venue';
 
@@ -9,6 +9,10 @@ import { Venue } from '../../interface/venue';
   styleUrls: ['./venue-detail.component.css']
 })
 export class VenueDetailComponent implements OnInit {
+  @ViewChild('eventTab') eventTab: ElementRef;
+  @ViewChild('infoTab') infoTab: ElementRef;
+  @ViewChild('events') event: ElementRef;
+  @ViewChild('info') info: ElementRef;
   private route: ActivatedRouteSnapshot;
   private venueId: string = '';
   private venue: Venue;
@@ -31,8 +35,29 @@ export class VenueDetailComponent implements OnInit {
     }, error => console.error(error))
   }
 
-
   ngOnInit(): void {
   }
 
+  onEventTabClick(): void {
+    let eTab = this.eventTab.nativeElement;
+    eTab.classList.add('active');
+    let iTab = this.infoTab.nativeElement;
+    iTab.classList.remove('active');
+    let infoContent = this.info.nativeElement;
+    infoContent.classList.remove('active');
+    let eventContent = this.event.nativeElement;
+    eventContent.classList.add('active');
+  }
+
+  onInfoTabClick(): void {
+    let eTab = this.eventTab.nativeElement;
+    eTab.classList.remove('active');
+    let iTab = this.infoTab.nativeElement;
+    iTab.classList.add('active');
+    let infoContent = this.info.nativeElement;
+    infoContent.classList.add('active');
+    let eventContent = this.event.nativeElement;
+    eventContent.classList.remove('active');
+
+  }
 }

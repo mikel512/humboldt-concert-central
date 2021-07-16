@@ -10,6 +10,7 @@ namespace fortress.core.DAL
     {
         Task<IEnumerable<EventConcert>> GetConcerts();
         Task<IEnumerable<EventConcert>> GetConcertsByCity(string city);
+        Task<IEnumerable<EventConcert>> GetConcertsByVenue(string venue);
         Task<EventConcert> GetConcertById(int id);
         void InsertConcert(EventConcert concert);
         void DeleteConcert(int id);
