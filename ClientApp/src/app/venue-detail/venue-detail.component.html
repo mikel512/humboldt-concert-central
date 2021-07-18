@@ -1,4 +1,4 @@
-<div class="dash-img" style="background-image: url(/assets/atl-cover.jpg);">
+<div class="dash-img" style="background-image: url({{venue.picture}});">
     <div class="title-content">
         <div class="container">
             <div class="row">
@@ -44,7 +44,10 @@
         <div #events class="col-lg-8 tab-pane d-lg-block active">
             <h2>Upcoming events at {{venue.venueName}}</h2>
             <div id="list">
-
+                <ng-container *ngFor="let event of events | async">
+                    <app-event-item [event]="event" class="col-md-6 col-lg-3"></app-event-item>
+                </ng-container>
+                
             </div>
         </div>
 

@@ -26,11 +26,13 @@ export class EventPageComponent implements OnInit, AfterViewChecked {
 
       http.get<EventConcert[]>(baseUrl + 'concert').subscribe(result => {
         this.events = result;
+        console.log(this.events);
       }, error => console.error(error));
     } else {
 
       http.get<EventConcert[]>(baseUrl + 'concert/city/' + this.currentCity).subscribe(result => {
         this.events = result;
+        console.log(this.events);
       }, error => console.error(error));
     }
 
