@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { VenueDetailComponent } from './venue-detail.component';
+import { EventItemModule } from '../event-item/event-item.module';
 
 
 const routes: Routes = [
@@ -12,7 +13,8 @@ const routes: Routes = [
   declarations: [VenueDetailComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    EventItemModule
   ]
 })
 export class VenueDetailModule { }

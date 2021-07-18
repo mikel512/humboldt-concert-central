@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, HostListener, Input, OnInit, ViewChild } from '@angular/core';
-import { EventConcert } from '../../../interface/eventconcert';
+import { EventConcert } from '../../interface/eventconcert';
 
 @Component({
   selector: 'app-event-item',

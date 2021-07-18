@@ -17,7 +17,7 @@ export class VenueDetailComponent implements OnInit {
   private route: ActivatedRouteSnapshot;
   private venueId: string = '';
   private venue: Venue;
-  private events: EventConcert[] = [];
+  private concerts: EventConcert[] = [];
 
   constructor(private actRouter: ActivatedRoute,
     private router: Router,
@@ -28,8 +28,8 @@ export class VenueDetailComponent implements OnInit {
 
     // get corresponding venue's events
     http.get<EventConcert[]>(baseUrl + 'Concert/' + this.venueId + '/true').subscribe(result => {
-      this.events = result;
-      console.log(this.events);
+      this.concerts = result;
+      console.log(this.concerts);
     }, error => console.log('error'));
     // get venue details
     http.get<Venue>(baseUrl + 'Venue/' + this.venueId).subscribe(result => {

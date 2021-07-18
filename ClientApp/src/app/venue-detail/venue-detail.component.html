@@ -29,12 +29,10 @@
         <div class="col-12">
             <ul class="nav nav-tabs nav-justified no-stack d-flex d-lg-none my-3">
                 <li class="nav-item">
-                    <a #eventTab class="nav-link active" (click)="onEventTabClick()"
-                        data-toggle="tab">Events</a>
+                    <a #eventTab class="nav-link active" (click)="onEventTabClick()" data-toggle="tab">Events</a>
                 </li>
                 <li class="nav-item">
-                    <a #infoTab class="nav-link" (click)="onInfoTabClick()"
-                        data-toggle="tab">Info</a>
+                    <a #infoTab class="nav-link" (click)="onInfoTabClick()" data-toggle="tab">Info</a>
                 </li>
             </ul>
         </div>
@@ -44,10 +42,13 @@
         <div #events class="col-lg-8 tab-pane d-lg-block active">
             <h2>Upcoming events at {{venue.venueName}}</h2>
             <div id="list">
-                <ng-container *ngFor="let event of events | async">
-                    <app-event-item [event]="event" class="col-md-6 col-lg-3"></app-event-item>
-                </ng-container>
-                
+
+                <div class="row">
+                    <ng-container *ngFor="let concert of concerts">
+                        <app-event-item [event]="concert" class="col-md-6 col-lg-4"></app-event-item>
+                    </ng-container>
+                </div>
+
             </div>
         </div>
 
@@ -56,31 +57,31 @@
             <p>{{venue.description}}</p>
 
             <div class="row" style="margin-top: 15px;">
-               <div class="col-md-4">
-                   <h5 class="trim-top trim-bottom" style="line-height: 20px;">Address</h5>
-               </div> 
-               <div class="col-md-8">
-                   <address class="mb-0">
-                       {{venue.address}}
-                   </address>
-               </div>
+                <div class="col-md-4">
+                    <h5 class="trim-top trim-bottom" style="line-height: 20px;">Address</h5>
+                </div>
+                <div class="col-md-8">
+                    <address class="mb-0">
+                        {{venue.address}}
+                    </address>
+                </div>
             </div>
 
             <div class="row" style="margin-top: 15px;">
-               <div class="col-md-4">
-                   <h5 class="trim-top trim-bottom" style="line-height: 20px;">Additional Links</h5>
-               </div> 
-               <div class="col-md-8">
-                   <ul class="list-unstyled">
-                       <li>
-                           <a href="{{venue.ticketsLink}}">{{venue.venueName}} Website</a>
-                       </li>
-                       <li>
-                           <a href="{{venue.menuLink}}">{{venue.venueName}} Food & Drinks Menu</a>
-                       </li>
-                   </ul>
+                <div class="col-md-4">
+                    <h5 class="trim-top trim-bottom" style="line-height: 20px;">Additional Links</h5>
+                </div>
+                <div class="col-md-8">
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="{{venue.ticketsLink}}">{{venue.venueName}} Website</a>
+                        </li>
+                        <li>
+                            <a href="{{venue.menuLink}}">{{venue.venueName}} Food & Drinks Menu</a>
+                        </li>
+                    </ul>
 
-               </div> 
+                </div>
             </div>
         </div>
     </div>

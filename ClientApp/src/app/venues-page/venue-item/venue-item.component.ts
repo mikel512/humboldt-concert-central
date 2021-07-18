@@ -13,7 +13,7 @@ export class VenueItemComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.venue.picture = "../../../../assets/stock-venue.jpg"
+    // this.venue.picture = "../../../../assets/stock-venue.jpg"
   }
 
 }
