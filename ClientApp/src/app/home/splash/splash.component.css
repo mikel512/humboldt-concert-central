@@ -1,25 +1,36 @@
-.splash-lg {
-    background: url("../../../assets/splash-proto5-lg.jpg") no-repeat scroll center top transparent;
-    /* background-position: fixed; */
-    background-size: 100% 100%;
+.intro .splash {
+    position: relative;
+}
+.intro .splash::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.4;
 }
 
+
 .splash {
-    background: url("../../../assets/splash-proto5-lg.jpg") no-repeat scroll center top transparent;
-    background-position: fixed;
-    background-size: auto 100%;
+    background: url("../../../assets/splash-proto4.jpg") no-repeat center top;
+    background-size: cover;
+}
+
+@media(max-width: 991.98px) {
+    .intro .splash {
+        height: 380px;
+    }
+}
+
+@media(min-width: 1400px) {
+    .intro .splash {
+        height: 360px;
+    }
+
 }
 
 .splash-title {
     padding-top: 1.5em;
-}
-
-.splash-title-lg {
-    font-size: 3rem;
-    padding-top: 1.5em;
-}
-.splash-container {
-    position: relative;
-    text-align: center;
-    color: white;
 }

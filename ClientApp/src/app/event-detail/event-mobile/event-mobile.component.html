@@ -1,0 +1,68 @@
+<div class="main-img" style="background-image: url({{dataMobile.flyer}});">
+    <div class="container">
+        <div class="format"></div>
+    </div>
+</div>
+
+<div class="container font-styles">
+    <div class="row">
+        <div class="col-sm-4">
+
+            <div class="event-page-card">
+                <div class="container pt-4">
+                    <h5 class="card-title pl-2">{{dataMobile.eventName}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="br-color">
+
+
+    <div class="row">
+
+        <div class="col-sm-9">
+            <div class="event-page-card">
+                <div class="container pt-4">
+
+                    <div class="detail-group row">
+                        <div class="col-2 pl-4">
+                            <i class="far fa-calendar-alt icon-size"></i>
+                        </div>
+                        <div class="col-10">
+                            <h3 class="detail-font">Date and Time</h3>
+                            <p class="">{{dataMobile.eventDate}} <small class="dim-text">{{dataMobile.eventTime}}</small></p>
+                        </div>
+                    </div>
+
+                    <div class="detail-group row">
+                        <div class="col-2 pl-4">
+                            <i class="fas fa-search-location icon-size"></i>
+                        </div>
+                        <div class="col-10">
+                            <h3 class="detail-font">Location</h3>
+                            <p class="">{{dataMobile.venue.venueName}}
+                                <small class="dim-text">{{dataMobile.venue.location}}</small>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bottom-panel">
+    <div class="container panel-wrap">
+
+        <div class="price-listing">
+            $5
+        </div>
+
+        <div class="btn-wrapper">
+            <button class="btn btn-primary tickets-button">Tickets</button>
+        </div>
+
+    </div>
+</div>
