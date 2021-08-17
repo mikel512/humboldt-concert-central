@@ -1,1 +1,77 @@
-<p>event-desktop works!</p>
+<div class="container" style="padding-top: 3rem;">
+
+    <div id="top" class="body-color" style="border-radius: 5px;">
+
+        <div class="row">
+
+            <div class="col-8">
+                <div class="container">
+                    <div class="img-center">
+                        <img src="{{dataDesk.flyer}}" class="img-elem">
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="col-4 vr">
+                <div class="">
+                    <div class="container pt-4">
+                        <div class="card-title disp-date">{{displayDate}}</div>
+
+                        <h5 class="card-title" style="padding-top: 120px;">
+                            {{dataDesk.eventName}}
+
+                        </h5>
+                        <div class="text-detail-info">{{dataDesk.venue.venueName}}</div>
+
+                        <div class="disp-date" style="padding-top: 90px;">{{dataDesk.price}}</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="btn-row" class="container body-color">
+        <div class="row middle-panel">
+            <div class="col-8">
+
+            </div>
+            <div class="col-4">
+                <div class="container">
+                    <a class="btn btn-primary btn-block" href="{{dataDesk.tickets}}">Tickets</a>
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div id="info-row" class="container body-color">
+
+        <div class="row pt-body pl-2">
+            <div class="col-8">
+                <h3 class="detail-font">About this event</h3>
+                {{dataDesk.details}}
+            </div>
+
+            <div class="col-4">
+                <h3 class="detail-font">Date and Time</h3>
+                <p class="font-info">{{dataDesk.eventDate}} <small class="dim-text">{{dataDesk.eventTime}}</small></p>
+
+                <div class="pt-body"></div>
+                <h3 class="detail-font">Location</h3>
+                <p class="font-info">{{dataDesk.venue.venueName}}
+                    <small class="dim-text">{{dataDesk.venue.location}}</small>
+                    <br>
+                    {{dataDesk.venue.address}}
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</div>

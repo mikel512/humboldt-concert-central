@@ -10,4 +10,6 @@ export interface EventConcert {
     venue: Venue;
     tickets: string;
     eventTime: string;
+    details: string;
+    price: string;
 }

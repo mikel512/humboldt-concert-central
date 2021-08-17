@@ -27,6 +27,9 @@ export class EventDetailComponent implements OnInit, AfterViewChecked {
       this.event.eventTime = '9:00 PM';
       this.event.venue.location = 'Old Town'
       this.event.flyer = "../../../assets/sample-flyer.jpg";
+      this.event.details = "Lost Dog Street Band \nDoors 7:00 PM\n $15 Advance - $19 Door\n *masks required - Covid-19 guidelines enforced*";
+      this.event.price = '$15.00';
+      this.event.tickets = 'https://tickets.vemos.io/-LvvzSYm6udEnGfKIRLa/arcata-theatre-lounge/-Mb7t9UH4VCQttK4wGfo/lost-dog-street-band/-Mb9V9hdBByoWE8-wEY9';
       console.log(this.event);
     }, error => console.error(error))
   }
