@@ -26,13 +26,11 @@ export class VenuesPageComponent implements OnInit {
 
       http.get<Venue[]>(baseUrl + 'venue').subscribe(result => {
         this.venues = result;
-        console.log(this.venues);
       }, error => console.error(error));
     } else {
 
       http.get<Venue[]>(baseUrl + 'venue/city/' + this.currentCity).subscribe(result => {
         this.venues = result;
-        console.log(this.venues);
       }, error => console.error(error));
     }
 

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { VenuesPageComponent } from './venues-page.component';
 import { VenueItemComponent } from './venue-item/venue-item.component';
+import { LoadingAnimationsModule } from '../loading-animations/loading-animations.module';
 
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
   declarations: [VenuesPageComponent, VenueItemComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    LoadingAnimationsModule
   ]
 })
 export class VenuesPageModule { }

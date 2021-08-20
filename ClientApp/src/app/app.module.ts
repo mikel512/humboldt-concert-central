@@ -14,7 +14,11 @@ import { SplashComponent } from './home/splash/splash.component';
 import { CitiesMenuComponent } from './home/cities-menu/cities-menu.component';
 import { CityComponent } from './home/cities-menu/city/city.component';
 import { FooterComponent } from './footer/footer.component';
-import { LoaderAnimationComponent } from '../loader-animation/loader-animation.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SpinnerOverlayComponent } from './spinner-overlay/spinner-overlay.component';
+import { SpinnerOverlayService } from '../services/spinner-overlay.service';
+import { LoaderInterceptor } from '../interceptors/loader.interceptor';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 @NgModule({
   declarations: [
@@ -25,10 +29,12 @@ import { LoaderAnimationComponent } from '../loader-animation/loader-animation.c
     CitiesMenuComponent,
     CityComponent,
     FooterComponent,
-    LoaderAnimationComponent
+    SpinnerOverlayComponent,
   ],
   imports: [
+    OverlayModule,
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
+    BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
     ApiAuthorizationModule,
@@ -41,10 +47,13 @@ import { LoaderAnimationComponent } from '../loader-animation/loader-animation.c
       { path: ':city', loadChildren: () => import('./event-page/event-page.module').then(m => m.EventPageModule) },
       { path: 'events/:eventId', loadChildren: () => import('./event-detail/event-detail.module').then(m => m.EventDetailModule) },
       { path: 'venue-detail/:venueId', loadChildren: () => import('./venue-detail/venue-detail.module').then(m => m.VenueDetailModule) },
+      { path: 'loading-animations', loadChildren: () => import('./loading-animations/loading-animations.module').then(m => m.LoadingAnimationsModule) },
     ])
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true }
+    SpinnerOverlayService,
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
 })

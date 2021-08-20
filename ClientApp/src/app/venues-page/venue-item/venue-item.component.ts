@@ -8,12 +8,12 @@ import { Venue } from '../../../interface/venue';
 })
 export class VenueItemComponent implements OnInit {
   @Input() venue: Venue;
+  imageLoader: boolean = true;
 
   constructor() { 
   }
 
   ngOnInit(): void {
-    // this.venue.picture = "../../../../assets/stock-venue.jpg"
   }
 
 }

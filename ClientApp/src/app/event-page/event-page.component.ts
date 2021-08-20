@@ -1,18 +1,34 @@
+import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
 import { HttpClient } from '@angular/common/http';
-import { AfterViewChecked, Component, Inject, OnInit } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, Component, Inject, OnInit } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
 import { EventConcert } from '../../interface/eventconcert';
 
 @Component({
   selector: 'app-event-page',
   templateUrl: './event-page.component.html',
-  styleUrls: ['./event-page.component.css']
+  styleUrls: ['./event-page.component.css'],
+  animations: [
+    trigger('flyInOut', [
+      state('in', style({ transform: 'translateX(0)' })),
+      transition('void => *', [
+        animate(100, keyframes([
+          style({ opacity: 0, transform: 'translateX(-100%)', offset: 0 }),
+          style({ opacity: 1, transform: 'translateX(15px)', offset: 0.3 }),
+          style({ opacity: 1, transform: 'translateX(0)', offset: 1.0 })
+        ]))
+      ]),
+    ])
+  ]
 })
-export class EventPageComponent implements OnInit, AfterViewChecked {
+export class EventPageComponent implements OnInit, AfterViewInit {
   private events: EventConcert[] = [];
   private route: ActivatedRouteSnapshot;
   private currentCity: string = '';
   private citiesDropdown: string[] = ['Arcata', 'Eureka', 'All'];
+
+  private staggeringEvents: EventConcert[] = [];
+  private next: number = 0;
 
   constructor(private actRouter: ActivatedRoute,
     private router: Router,
@@ -26,11 +42,13 @@ export class EventPageComponent implements OnInit, AfterViewChecked {
 
       http.get<EventConcert[]>(baseUrl + 'concert').subscribe(result => {
         this.events = result;
+        this.doNext();
       }, error => console.error(error));
     } else {
 
       http.get<EventConcert[]>(baseUrl + 'concert/city/' + this.currentCity).subscribe(result => {
         this.events = result;
+        this.doNext();
       }, error => console.error(error));
     }
 
@@ -39,7 +57,14 @@ export class EventPageComponent implements OnInit, AfterViewChecked {
   ngOnInit(): void {
   }
 
-  ngAfterViewChecked() {
+  ngAfterViewInit() {
+
+  }
+
+  doNext() {
+    if(this.next <this.events.length) {
+      this.staggeringEvents.push(this.events[this.next++]);
+    }
   }
 
   navVenues() {

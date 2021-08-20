@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { EventPageComponent } from './event-page.component';
 import { EventItemModule } from '../event-item/event-item.module';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const routes: Routes = [
   { path: '', component: EventPageComponent }
@@ -14,7 +14,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    EventItemModule
+    EventItemModule,
   ]
 })
 export class EventPageModule { }

@@ -3,7 +3,11 @@
     </a>
     <div class="event-image-container">
         <a routerLink="/events/{{event.eventConcertId}}">
-            <div class="image" style="background-image: url({{event.flyer}});"></div>
+            <div [hidden]="!imageLoader" class="img-loader img-loader-md img-loader-sm">
+                <app-animation-one></app-animation-one>
+            </div>
+            <div [hidden]="imageLoader" class="image" style="background-image: url({{event.flyer}});"></div>
+            <img src="{{event.flyer}}" hidden (load)="this.imageLoader = false">
         </a>
     </div>
     <div class="caption">

@@ -3,11 +3,20 @@ import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core'
 import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
 import { Venue } from '../../interface/venue';
 import { EventConcert } from '../../interface/eventconcert';
+import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-venue-detail',
   templateUrl: './venue-detail.component.html',
-  styleUrls: ['./venue-detail.component.css']
+  styleUrls: ['./venue-detail.component.css'],
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({ opacity: '0' }),
+        animate('.5s ease-out', style({ opacity: '1' })),
+      ]),
+    ]),
+  ]
 })
 export class VenueDetailComponent implements OnInit {
   @ViewChild('eventTab') eventTab: ElementRef;

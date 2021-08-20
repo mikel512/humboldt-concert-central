@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LoaderAnimationComponent } from './loader-animation.component';
+import { AnimationOneComponent } from './animation-one.component';
 
-describe('LoaderAnimationComponent', () => {
-  let component: LoaderAnimationComponent;
-  let fixture: ComponentFixture<LoaderAnimationComponent>;
+describe('LoadingAnimationsComponent', () => {
+  let component: AnimationOneComponent;
+  let fixture: ComponentFixture<AnimationOneComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoaderAnimationComponent ]
+      declarations: [ AnimationOneComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoaderAnimationComponent);
+    fixture = TestBed.createComponent(AnimationOneComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

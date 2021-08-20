@@ -4,11 +4,12 @@ import { EventConcert } from '../../interface/eventconcert';
 @Component({
   selector: 'app-event-item',
   templateUrl: './event-item.component.html',
-  styleUrls: ['./event-item.component.css']
+  styleUrls: ['./event-item.component.css'],
 })
 export class EventItemComponent implements OnInit, AfterViewInit {
   @Input() event: EventConcert;
   isInVenueDetail: boolean;
+  imageLoader: boolean = true;
 
   constructor() { }
 

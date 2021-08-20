@@ -11,7 +11,6 @@
     line-height: 0;
     padding: 0;
     min-width: 0;
-
 }
 
 .event-box {
@@ -24,6 +23,25 @@
     border-radius: 0.25rem;
 }
 
+@media (min-width: 1192px) {
+    .img-loader {
+        height: 253px;
+        margin-left: 50px;
+        padding-left: 30px;
+        margin-bottom: 80px;
+        margin-top: 40px;
+        padding-bottom: 30px;
+    }
+}
+
+@media (min-width: 991.99px){
+    .img-loader-md {
+        height: 108px;
+        margin-left: 35px;
+        margin-bottom: 40px;
+    }
+
+}
 
 .event-box .image {
     padding-bottom: 100%;
@@ -81,10 +99,11 @@
         padding-bottom: 0;
     }
 
+    .event-box.tile-view .img-loader{
+        padding-top: 30px;
+    }
 }
-
 
 a {
     color: #337ab7;
-
 }
