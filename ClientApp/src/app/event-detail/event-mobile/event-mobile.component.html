@@ -31,7 +31,8 @@
                         </div>
                         <div class="col-10">
                             <h3 class="detail-font">Date and Time</h3>
-                            <p class="">{{dataMobile.eventDate}} <small class="dim-text">{{dataMobile.eventTime}}</small></p>
+                            <p class="">{{dataMobile.dateFormatted}} <small
+                                    class="dim-text">{{dataMobile.eventTime}}</small></p>
                         </div>
                     </div>
 
@@ -53,16 +54,19 @@
     </div>
 </div>
 
-<div class="bottom-panel">
-    <div class="container panel-wrap">
+<ng-container *ngIf="dataMobile.tickets !== ''">
+    <div class="bottom-panel">
+        <div class="container panel-wrap">
 
-        <div class="price-listing">
-            {{dataMobile.price}}
+            <div class="price-listing">
+                {{dataMobile.price}}
+            </div>
+
+            <div class="btn-wrapper">
+                <a class="btn btn-primary tickets-button" href="{{dataMobile.tickets}}">Tickets</a>
+            </div>
+
         </div>
-
-        <div class="btn-wrapper">
-            <a class="btn btn-primary tickets-button" href="{{dataMobile.tickets}}">Tickets</a>
-        </div>
-
     </div>
-</div>
+
+</ng-container>

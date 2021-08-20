@@ -13,7 +13,6 @@ export class EventItemComponent implements OnInit, AfterViewInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.event.flyer = "../../../../assets/sample-flyer.jpg"
   }
 
   ngAfterViewInit() {

@@ -12,4 +12,5 @@ export interface EventConcert {
     eventTime: string;
     details: string;
     price: string;
+    dateFormatted:string;
 }

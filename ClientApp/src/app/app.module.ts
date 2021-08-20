@@ -14,6 +14,7 @@ import { SplashComponent } from './home/splash/splash.component';
 import { CitiesMenuComponent } from './home/cities-menu/cities-menu.component';
 import { CityComponent } from './home/cities-menu/city/city.component';
 import { FooterComponent } from './footer/footer.component';
+import { LoaderAnimationComponent } from '../loader-animation/loader-animation.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FooterComponent } from './footer/footer.component';
     SplashComponent,
     CitiesMenuComponent,
     CityComponent,
-    FooterComponent
+    FooterComponent,
+    LoaderAnimationComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

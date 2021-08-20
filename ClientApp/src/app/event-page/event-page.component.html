@@ -16,8 +16,8 @@
             <div class="col-8 pl-4">
                 <div class="form-group">
                     <select class="form-control bg-dark text-light" (change)="navigateTo($event.target.value)">
-                        <option [ngValue]="currentCity">{{currentCity}}</option>
-                        <option *ngFor="let place of citiesDropdown" [ngValue]="place">{{place}}</option>
+                        <option [value]="currentCity">{{currentCity}}</option>
+                        <option *ngFor="let place of citiesDropdown" [value]="place">{{place}}</option>
                     </select>
                 </div>
             </div>

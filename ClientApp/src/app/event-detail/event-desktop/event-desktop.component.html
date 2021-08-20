@@ -5,9 +5,10 @@
         <div class="row">
 
             <div class="col-8">
+
                 <div class="container">
                     <div class="img-center">
-                        <img src="{{dataDesk.flyer}}" class="img-elem">
+                        <img [src]='flyerURL()' class="img-elem">
                     </div>
                 </div>
 
@@ -33,22 +34,24 @@
         </div>
     </div>
 
-    <div id="btn-row" class="container body-color">
-        <div class="row middle-panel">
-            <div class="col-8">
-
-            </div>
-            <div class="col-4">
-                <div class="container">
-                    <a class="btn btn-primary btn-block" href="{{dataDesk.tickets}}">Tickets</a>
+    <ng-container *ngIf="dataDesk.tickets !== ''">
+        <div id="btn-row" class="container body-color">
+            <div class="row middle-panel">
+                <div class="col-8">
 
                 </div>
+                <div class="col-4">
+                    <div class="container">
+                        <a class="btn btn-primary btn-block" href="{{dataDesk.tickets}}">Tickets</a>
+
+                    </div>
+                </div>
+
+
             </div>
 
-
         </div>
-
-    </div>
+    </ng-container>
 
     <div id="info-row" class="container body-color">
 
@@ -60,7 +63,8 @@
 
             <div class="col-4">
                 <h3 class="detail-font">Date and Time</h3>
-                <p class="font-info">{{dataDesk.eventDate}} <small class="dim-text">{{dataDesk.eventTime}}</small></p>
+                <p class="font-info">{{dataDesk.dateFormatted}} <small class="dim-text">{{dataDesk.eventTime}}</small>
+                </p>
 
                 <div class="pt-body"></div>
                 <h3 class="detail-font">Location</h3>

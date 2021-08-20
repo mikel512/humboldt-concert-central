@@ -29,7 +29,6 @@ export class VenueDetailComponent implements OnInit {
     // get corresponding venue's events
     http.get<EventConcert[]>(baseUrl + 'Concert/' + this.venueId + '/true').subscribe(result => {
       this.concerts = result;
-      console.log(this.concerts);
     }, error => console.log('error'));
     // get venue details
     http.get<Venue>(baseUrl + 'Venue/' + this.venueId).subscribe(result => {
