@@ -4,6 +4,7 @@ import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router'
 import { Venue } from '../../interface/venue';
 import { EventConcert } from '../../interface/eventconcert';
 import { animate, style, transition, trigger } from '@angular/animations';
+import { SpinnerOverlayService } from '../../services/spinner-overlay.service';
 
 @Component({
   selector: 'app-venue-detail',
@@ -29,20 +30,22 @@ export class VenueDetailComponent implements OnInit {
   private concerts: EventConcert[] = [];
 
   constructor(private actRouter: ActivatedRoute,
+    private overlayService: SpinnerOverlayService,
     private router: Router,
     http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
 
     this.route = actRouter.snapshot;
     this.venueId = this.route.params['venueId'];
 
-    // get corresponding venue's events
-    http.get<EventConcert[]>(baseUrl + 'Concert/' + this.venueId + '/true').subscribe(result => {
-      this.concerts = result;
-    }, error => console.log('error'));
     // get venue details
     http.get<Venue>(baseUrl + 'Venue/' + this.venueId).subscribe(result => {
       this.venue = result;
     }, error => console.log('error'));
+    // get corresponding venue's events
+    overlayService.hide();
+    http.get<EventConcert[]>(baseUrl + 'Concert/' + this.venueId + '/true').subscribe(result => {
+      this.concerts = result;
+    }, error => console.log(error));
 
   }
 

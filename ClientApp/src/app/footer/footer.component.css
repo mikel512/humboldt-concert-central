@@ -1,12 +1,12 @@
 .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
     background-color: black;
+    padding: 0%;
 }
 
 .footer-sm {
-    position: absolute;
-    width: 100%;
     background-color: black;
+}
+
+p {
+    margin-bottom: 0;
 }

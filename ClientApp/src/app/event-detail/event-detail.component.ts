@@ -21,6 +21,7 @@ export class EventDetailComponent implements OnInit, AfterViewChecked {
     this.eventId = this.route.params['eventId'];
     http.get<EventConcert>(baseUrl + 'concert/' + this.eventId).subscribe(result => {
       this.event = result;
+      console.log(this.event.details)
     }, error => console.error(error))
   }
 

@@ -26,6 +26,12 @@
     text-transform: uppercase;
 }
 
+.price-div {
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 15px;
+}
+
 .text-detail-info {
     margin-bottom: 40px;
     color: rgb(169, 161, 145);
